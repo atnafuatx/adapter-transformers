@@ -8,12 +8,12 @@ for SEED in 1 2 3; do
 	outputdir="${MODELPATH}XNLI/baselines/NLLB/de/$SEED/"
 	mkdir -p $outputdir
 	python3 ${BASEPATH}run_text.py \
-		--model_name_or_path xlm-roberta-base \
-		--task_name xnli \
+		--model_name_or_path Davlan/afro-xlmr-base \
+		--task_name sst2 \
 		--train_file ${DATADIR}train.tsv \
 		--validation_file ${DATADIR}validation.tsv \
 		--label_file labels.txt \
-		--language de \
+		--language amh \
 		--load_lang_adapter de/wiki@ukp \
 		--do_train \
 		--do_eval \
